@@ -2,10 +2,8 @@
 
 KMU 이재구 교수님
 
-[![기계학습 - 오일석](https://image.yes24.com/goods/57537091/XL)](https://www.yes24.com/Product/Goods/57537091)
-
-
-
+<img src="https://image.yes24.com/goods/57537091/XL" width="300" height="400"/>
+기계학습 - 오일석
 # 목차
 
 
