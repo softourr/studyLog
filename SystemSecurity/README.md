@@ -2,9 +2,10 @@
 
 윤명근 교수님
 
-[![Introduction to Computer Security](https://image.yes24.com/momo/TopCate2293/MidCate007/229261922.jpg)](https://www.yes24.com/Product/Goods/3587880)
 
-Introduction to Computer Security, 2011, International edition
+<img src="https://github.com/hhzzzk/studyLog/assets/67236054/31b91d4a-1762-477b-bdd0-aa267ba6eb75" width="300" height="400"/>
+
+[Introduction to Computer Security, 2011, International edition](https://www.yes24.com/Product/Goods/3587880)
 
 # 목차
 
