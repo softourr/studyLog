@@ -2,7 +2,9 @@
 
 최은미 교수님
 
-[![Software Architecture in Practice](https://image.yes24.com/momo/TopCate224/MidCate002/22317987.jpg)](https://www.yes24.com/Product/Goods/6285474)
+<img src="https://github.com/hhzzzk/studyLog/assets/67236054/75e50f29-54ff-4e54-99db-ccb09b6bb2cf" width="300" height="400"/>
+
+[Software Architecture in Practice](https://product.kyobobook.co.kr/detail/S000007684891)
 
 # 목차
 
