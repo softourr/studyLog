@@ -4,7 +4,7 @@
 
 # SS_1w_(ch1_intro)
 
-##> security goals
+## > security goals
 
 CIA
 
@@ -16,7 +16,8 @@ availability 가용성
 
 ```
 Confidentiality is the avoidance of the unauthorized disclosure of information.
-- confidentiality involves the protection of data, providing access for those who are allowed to see it while disallowing others from learning anything about its content.
+- confidentiality involves the protection of data, 
+providing access for those who are allowed to see it while disallowing others from learning anything about its content.
 ```
 
 
