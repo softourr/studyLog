@@ -2,11 +2,14 @@
 
 KMU 윤상민, 김장호 교수님
 
-[![컴퓨터 비전과 딥러닝 대표 이미지](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791156645481.jpg)](https://product.kyobobook.co.kr/detail/S000200616653)
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791156645481.jpg" width="300" height="400"/>
+컴퓨터 비전과 딥러닝 - 오일석
 
 
 
-[![컴퓨터 비전(Computer Vision) 대표 이미지](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791156641216.jpg)](https://product.kyobobook.co.kr/detail/S000001743418)
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791156641216.jpg" width="300" height="400"/>
+컴퓨터 비전 - 오일석
+
 
 # 목차
 
