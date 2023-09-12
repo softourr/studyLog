@@ -2,16 +2,14 @@
 
 박하명 교수님
 
-![Mining of Massive Datasets: Leskovec, Jure, Rajaraman, Anand, Ullman,  Jeffrey David: 9781108476348: Amazon.com: Books](https://m.media-amazon.com/images/I/41S4dkiG3jL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_PIStarRatingFOURANDHALF%2CBottomLeft%2C360%2C-6_SR600%2C315_ZA24%2C445%2C290%2C400%2C400%2CAmazonEmberBold%2C12%2C4%2C0%2C0%2C5_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg)
-
-![Data Science from Scratch | Joel Grus - 모바일교보문고](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9781491901427.jpg)
+<img src="https://m.media-amazon.com/images/I/41S4dkiG3jL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_PIStarRatingFOURANDHALF%2CBottomLeft%2C360%2C-6_SR600%2C315_ZA24%2C445%2C290%2C400%2C400%2CAmazonEmberBold%2C12%2C4%2C0%2C0%2C5_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" width="800" height="400"/>
 
 
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9781491901427.jpg" width="300" height="400"/>
 
 
+(교재1) Mining of Massive Datasets 3/E, Jure Leskovec, Anand Rajaraman, Jeffrey David Ullman, Cambridge University Press, 2020 
 
-(교재1) Mining of Massive Datasets 3/E, Jure Leskovec, Anand 
-Rajaraman, Jeffrey David Ullman, Cambridge University Press, 2020 
 (교재2) Data Science from Scratch 2/E, Joel Grus, O'REILLY, 2019
 
 
