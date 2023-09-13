@@ -27,7 +27,7 @@ __8.0 Crypto Protocol: Bird's-eye view (new) __
 
 
 
-# 0. Crypto Protocol : Bird's-eye view
+# 0.0 Crypto Protocol : Bird's-eye view
 
 교수님이 추가하신 부분. 전체적인 조감도? 느낌으로 보자
 
@@ -67,6 +67,8 @@ __8.0 Crypto Protocol: Bird's-eye view (new) __
 
 
 
+# 0.1 Crypto Protocol : Bird's-eye view
+
 
 <img src="https://github.com/hhzzzk/studyLog/assets/67236054/652b3415-4489-4fb8-b7ba-c29af1e2cfcc" alt="이미지" width="500">
 
@@ -94,11 +96,12 @@ Problem > 인터넷 세상에서 앨리스가 메세지를 밥에게 전달하�
 
    	> 그렇게 얻어낸 해쉬처리된 메세지 두 개를 비교해 같은지 여부로 판단한다.
 
-    	1. 앨리스는 repudation 할 수 없음. non-rep 충족
+    1. 앨리스는 repudation 할 수 없음. non-rep 충족
    	2. intergrity : 중간에 메세지가 변했다면 2개의 H(m) 이 일치하지 않았을 것임. 충족
    	3. efficiency : 서명은 느린 작업, 메세지가 굉장히 클 수 있음. 그래서 해쉬함수로 메세지를 작게 만들어놓고 서명작업을 함.
 
 
+# 0.2 Crypto Protocol : Bird's-eye view
 
 ## Q. 밥의 공개키가 정말 밥의 것일까? (+Kb)
 
