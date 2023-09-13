@@ -109,7 +109,7 @@
 - t-1번째 계산 결과를 t번째에 활용해 빠르게 계산
 - ![image](https://github.com/hhzzzk/studyLog/assets/67236054/4b23c039-1700-4264-8b4a-16a8f1e542e7)
 - ![image](https://github.com/hhzzzk/studyLog/assets/67236054/65f5ced8-ba13-447e-a726-c675405f0c4e)
-- ![img](https://blog.kakaocdn.net/dn/TKPUD/btrffOSdKsP/FABLmqSdEJARV6RYUZwnK0/img.png)
+<img src="https://blog.kakaocdn.net/dn/TKPUD/btrffOSdKsP/FABLmqSdEJARV6RYUZwnK0/img.png" alt="이미지" width="500">
 - [참고](https://100s.tistory.com/37)
 
 
@@ -131,7 +131,7 @@
 - 2차원 영상에서 화소를 나타내는 가장 일반적인 방법은 사각형이다. (4연결성 제일 많이 사용)
   - 원은 빈 공간이 생기는 문제가, 육각형은 좌표를 지정하기가 어렵다는 문제가 있기 때문이다.
 
-![img](https://blog.kakaocdn.net/dn/kW8Hy/btrfc7Lvivv/K9SdITdKWd7bknk5Dffl20/img.png)
+<img src="https://blog.kakaocdn.net/dn/kW8Hy/btrfc7Lvivv/K9SdITdKWd7bknk5Dffl20/img.png" alt="이미지" width="500">
 
 - 위치에 대해서 4방향, 8방향의 픽셀만 나의 이웃으로 판단하는 것을 각각 4-연결성, 8-연결성이라고 말한다.
 - 🔎4-연결성🔎은 계산의 효율성이 좋다. 주변의 4개만 확인하면 되기 때문이다. 하지만 주변에 있음에도 불구하고 연결성을 고려하고 있지 않는 부분도 있기 때문에, 인접해있다고 하더라도 떨어져 있는 덩어리처럼 보일 수 있다.
@@ -141,7 +141,7 @@
 
 - 4-연결성과 8-연결성
 
-![img](https://blog.kakaocdn.net/dn/qLlac/btrffPcwenq/puVlqPYga9U4QyV1nfvWB1/img.png)
+<img src="https://blog.kakaocdn.net/dn/qLlac/btrffPcwenq/puVlqPYga9U4QyV1nfvWB1/img.png" alt="이미지" width="500">
 
 1. 1을 만날 때까지 픽셀을 (0, 0) → (M-1, N-1) 방향으로 이동시킨다.
 2. 1을 만나면 1이라는 라벨을 붙여준다. 이후 4-연결성일 때는 해당 픽셀 기준으로 [i-1][j], [i][j-1], [i][j+1], [i+1][j]에 1이 있는지 확인한다.
@@ -157,11 +157,13 @@
   - 해결 2) 2차원 영상의 테두리에 0으로만 이루어진 픽셀을 둘러준다. → padding
 
 #### **스택 오버플로우 위험**
+<img src="https://blog.kakaocdn.net/dn/9GAKS/btrfdX2UY39/wTbATUkNohCycTNOMsfgxk/img.png" alt="이미지" width="500">
 
-![img](https://blog.kakaocdn.net/dn/9GAKS/btrfdX2UY39/wTbATUkNohCycTNOMsfgxk/img.png)
 
 ## **열 단위로 처리하는 알고리즘**
 
-![img](https://blog.kakaocdn.net/dn/Qy0bs/btrfbYO2cpe/yhyWqHDPyXJJL8zXtzbTf1/img.png)
+<img src="https://blog.kakaocdn.net/dn/Qy0bs/btrfbYO2cpe/yhyWqHDPyXJJL8zXtzbTf1/img.png" alt="이미지" width="500">
+<img src="https://blog.kakaocdn.net/dn/Qy0bs/btrfbYO2cpe/yhyWqHDPyXJJL8zXtzbTf1/img.png" alt="이미지" width="500">
 
-![img](https://blog.kakaocdn.net/dn/TqdKM/btrfbBGBhc6/Ygfnsn0Ok8HKJXKZH1VUq1/img.png)
+
+[참고 컴퓨터비전 - 오일석 교수님](http://cv.jbnu.ac.kr/index.php?mid=cv)
