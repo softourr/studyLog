@@ -30,3 +30,30 @@ KMU 윤상민, 김장호 교수님
 13. Object Detection R-CNN / Fast R-CNN
 14. Generative Adversial Network 1 / 2
 15. 기말고사
+
+
+<details>
+<summary>✅ 1주차</summary>
+
+이 곳에 숨겨진 내용을 넣어주세요.
+
+</details>
+
+<details>
+<summary>✅ 2주차</summary>
+
+
+## 1
+
+
+## 2
+2.2 히스토그램
+2.2.1 히스토그램 계산
+2.2.2 히스토그램 용도
+2.2.3 히스토그램 역투영과 얼굴 검출
+
+2.3 이진영상
+2.3.1 이진화와 오츄 알고리즘
+2.3.2 연결요소
+
+</details>
