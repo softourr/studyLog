@@ -1,3 +1,6 @@
+<img src="https://github.com/hhzzzk/studyLog/assets/67236054/2800b1ac-11c9-4da4-86b2-5f80f96c03b5" width="700" height="350" alt="Your Image" />
+
+
 # 👁️‍🗨️ studyLog
 공부 정리
 
