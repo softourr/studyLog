@@ -35,9 +35,10 @@ KMU 윤상민, 김장호 교수님
 </details>
 
 <details>
-<summary>✅ 2주차</summary>
+<summary>✅ 2주차
+</summary>
 
-
+[🔗](https://github.com/hhzzzk/studyLog/blob/main/ComputerVision/CV_2w_2_Histogram.md)
 ## 1
 
 
