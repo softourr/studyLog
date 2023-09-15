@@ -4,7 +4,8 @@
 
 # SS_1w_(ch1_intro)
 
-## Security goals 🐲
+## Security goals 🐲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+
 CIA
 
 confidentiality 기밀성
@@ -126,7 +127,7 @@ availability 가용성 : 사용가능한 정도
 
 ```
 
-## Other Security Concepts - A.A.A.
+## Other Security Concepts - A.A.A.🔳🔳🔳🔳🔳🔳🔳🔳🔳
 
 - Authenicity
 - Assurance
@@ -202,7 +203,7 @@ Protections : 허가와 정책을 시행하기 위해 구현된 메커니즘을 
 ```
 
 
-## Threats and Attacks 🐲🐲🐲
+## Threats and Attacks 🐲🐲🐲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
 
 ### Eavesdropping - 도청
 
@@ -254,7 +255,7 @@ Protections : 허가와 정책을 시행하기 위해 구현된 메커니즘을 
 ```
 
 
-## Encryption and Decryption
+## Encryption and Decryption🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
 
 메세지 M은 plaintext라고 한다. 암호화한 메세지는 cipgertext라고 한다.
 
