@@ -5,10 +5,6 @@
 # SS_1w_(ch1_intro)
 
 ## Security goals 🐲
-<div style="text-align:center;">
-   이 텍스트는 가운데로 정렬됩니다.
-</div>
-
 CIA
 
 confidentiality 기밀성
