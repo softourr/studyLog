@@ -1,4 +1,4 @@
-# SS_0w_사전동영상
+# SS_한시간에 끝내는 보안프로토콜(사전동영상)
 
 [PPT](https://gaia.cs.umass.edu/kurose_ross/ppt.php)
 
@@ -96,9 +96,9 @@ Problem > 인터넷 세상에서 앨리스가 메세지를 밥에게 전달하�
 
    	> 그렇게 얻어낸 해쉬처리된 메세지 두 개를 비교해 같은지 여부로 판단한다.
 
-    1. 앨리스는 repudation 할 수 없음. non-rep 충족
-   	2. intergrity : 중간에 메세지가 변했다면 2개의 H(m) 이 일치하지 않았을 것임. 충족
-   	3. efficiency : 서명은 느린 작업, 메세지가 굉장히 클 수 있음. 그래서 해쉬함수로 메세지를 작게 만들어놓고 서명작업을 함.
+     1. 앨리스는 repudation 할 수 없음. non-rep 충족
+     2. intergrity : 중간에 메세지가 변했다면 2개의 H(m) 이 일치하지 않았을 것임. 충족
+     3. efficiency : 서명은 느린 작업, 메세지가 굉장히 클 수 있음. 그래서 해쉬함수로 메세지를 작게 만들어놓고 서명작업을 함.
 
 
 # 0.2 Crypto Protocol : Bird's-eye view
