@@ -164,3 +164,168 @@ dMAC를 누구로 해야 하는가. 바로 위에서 찾는 7번 규칙의 게�
 패킷, 이더넷 프레임에서 SMAC | dMAC | Sip | dip
 
 **출발 IP 주소와 목적지 IP 주소는 변하지 않고 MAC 주소는 계속 바뀐다.**
+
+---
+
+---
+
+---
+
+① PC0은 자신의 라우팅 테이블([그림19] 참조)을 확인하고 7번 라우팅 규칙을 사용한다. 
+
+즉, PC0는 패킷을 7번 규칙의 gateway(IP주소 192.168.161.1)인 Router0로 전송해야 한다는 것을 알았다. 
+
+그 다음 패킷 전달의 책임은 전적으로 Router0에 귀속된다.
+
+
+
+② PC0의 ARP Table에 192.168.161.1에 해당하는 MAC 주소가 없다고 가정하자. 
+
+PC0는 192.168.161.1을 목적지 IP주소로 사용하여 ARP Request 패킷을 생성하여 브로드캐스트(Broadcast) 한다. 즉, 패킷내 목적지 MAC 주소를 0xFFFFFFFF로 설정한다(MAC주소는 48비트이므로 모든 비트를 1로 설정한 것과 동일함).
+
+
+
+③ PC1과 PC2는 ARP Request 패킷의 목적지 MAC 주소가 0xFFFFFFFF임을 확인하고, 패킷의 목적지 주소IP가 자신의 IP주소와 동일한지 확인한다. 
+
+자신이 아니므로 패킷을 버린다(promiscuous 모드로 설정된 경우는 패킷을 버리지 않는다. 와이어샤크 참조).
+
+
+
+④ Router0는 ARP Request 패킷의 목적지 MAC 주소가 0xFFFFFFFF임을 확인하고, 패킷의 목적지 주소IP가 자신의 IP주소와 동일한지 확인한다. 
+
+목적지 IP가 자신의 IP주소와 일치함을 확인하고 자신의 MAC주소를 적어서 PC0에게 ARP Response 패킷을 보내준다.
+
+
+
+⑤ PC0는 ARP Response를 받은 후, 자신의 ARP Table에 Router0의 IP주소와 MAC주소를 맵핑(mapping)시킨 후에 Router0로 패킷을 전송한다.
+
+
+
+⑥ 패킷을 받은 Router0는 자신의 라우팅 테이블을 참조하고 위와 동일한 절차를 반복해서 패킷을 Router1으로 전송한다.
+
+
+
+⑦ 패킷을 받은 Router1은 자신의 라우팅 테이블을 참조하고 마찬가지 방식으로 패킷을 PC3으로 전송한다.
+
+​     
+
+
+
+## 4wireshark실습
+
+와이어 샤크는 패킷의 이동을 보여주는 가장 유명한 오픈 소스 도구이다.
+
+원래 목적지 ip 주소가 자신이 아니면 해당 클라이언트는 그 패킷을 버리는데 와이어샤크를 이용하면 해당 패킷을 잡을 수 있다. 이런 모드를 LAN 카드가 Promiscuous mode로 설정됐다고 한다.
+
+**Promiscuous mode** : 목적지 ip 주소가 자신이 아닌 패킷도 잡아서 읽어드리는 모드
+
+​					해당 모드는 관리자 권한 있어야 설치나 설정 가능하다. 
+
+## 실습
+
+Npcap 있어야, 패킷 캡처의 약자이다. 패킷 잡는 라이브러리
+
+설치하면서 LAN 카드를 프로미스큐스 모드로 설정했다.
+
+와이어 샤크 설치
+
+머 암것도 안해도 패킷들이 엄청 왔다갔다 하고 있다.
+
+![네트워크패킷전달 4wireshark실습 6-7 screenshot](https://github.com/hhzzzk/studyLog/assets/67236054/1a461287-1dbc-442e-b749-ffa3c711cf0f)
+
+
+
+브라우저도 탐방해보자
+
+사이트 들어가자 TLS 암호 프로토콜 패킷 등.패킷이 먼가 엄청 많아진다
+
+​	이게 왜 뜨냐면 사이트가 기본적으로 자물쇠 표시. SSL 암호 통신하는
+
+
+
+## 필터링해보자
+
+ip.addr == 121.53.205.232
+
+ip주소 중에 위가 포함된 것만 보여준다.
+
+![네트워크패킷전달 4wireshark실습 9-42 screenshot](https://github.com/hhzzzk/studyLog/assets/67236054/32084031-247e-4f58-b341-c7412243e728)
+
+해당 패킷 자세히 보자
+
+![네트워크패킷전달 4wireshark실습 10-13 screenshot](https://github.com/hhzzzk/studyLog/assets/67236054/52685853-9c09-4723-a997-51eb98086b34)
+
+프레임 아래 보면 이더넷 패킷이 잇다.
+
+## 이더넷 부분
+
+이더넷 헤더 부분을 보면 출발지, 도착지의 MAC 주소가 있다.
+
+아마 목적지 MAC 주소가 자신의 주소일 것이다. 10.30.118.86이 지금 내 IP주소인데
+
+30:24:32:fe:67:12가 내 MAC 주소겠지
+
+![image](https://github.com/hhzzzk/studyLog/assets/67236054/c6c479e3-85da-42bb-8e83-158422359f5c)
+
+source 주소는 국민대의 웹주소다. 접근은 안되는데 암튼
+
+그럼 거기서 TLS로 패킷이 온 걸 내 노트북이 잡았다.
+
+## 인터넷 프로토콜 부분
+
+보면 출발지가 국민대 웹 위의 IP고 도착지가 내 노트북이다.
+
+## TCP 부분
+
+소스 포트번호 443, 디폴트
+
+내 노트북이 쓰는 포트번호 58004, 
+
+![image](https://github.com/hhzzzk/studyLog/assets/67236054/c6339abc-b3d5-4c95-a5d7-3d03d96ecda5)
+
+
+
+## 웹주소 접속 절차 한 단계씩 다 보기
+
+웹주소 접속하는 절차.
+
+먼저 내 브라우저가 최초 접속을 시도한다.
+
+![image](https://github.com/hhzzzk/studyLog/assets/67236054/969cdd3b-bd6f-4c6b-9c8a-2f6e05eb2d84)
+
+
+
+1. TCP 3way 핸드쉐이크
+   - 처음에 클라이언트가 서버에게 SYN 패킷을 보내고 서버가 SYN-ACK 패킷으로 답장한다. 그리고 클라이언트가 서버에게 다시 ACK 패킷을 보낸다.
+
+- 이제 본격적으로 TLS 세션이 맺어질 단계
+
+2. Client_hello
+
+   - 사이퍼 수트, 지원 가능한 암호 알고리즘들
+   - 실습 ~ 크롬 브라우저에서 16개 지원 가능하다! 서버는 이 중에 하나 골라라. 그걸로 암호화 통신하자
+   - 랜덤 넘버도 하나 생성해 보낸다. 
+
+   ---
+
+   ![image](https://github.com/hhzzzk/studyLog/assets/67236054/d9e89cd5-bceb-4165-aaa5-3216ccc803cc)
+
+   ​
+
+3. Server_hello
+
+   ![image](https://github.com/hhzzzk/studyLog/assets/67236054/0323ffbe-e6ee-4b89-becd-c711d1d8b4df)
+
+   - 해당 사이퍼 수트가 선택됐다.
+   - 서버가 생성?선택한 랜덤 넘버도 있다.
+
+![image](https://github.com/hhzzzk/studyLog/assets/67236054/4a02600a-9500-4fc8-842d-2970e0e6e8c4)
+
+
+
+서버 헬로우하고 패킷 주고 받고 ~
+
+4. Certificate, Server Key Exchange 패킷도 있고..그렇다.
+
+어우 화질이..
+
