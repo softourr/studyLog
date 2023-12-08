@@ -153,6 +153,7 @@ N = 전체 문서 수
 CCS = Pearson Correlation Coefficient, 가장 대표적인 상관계수
 
 - sol ) 평가하지 않은 경우, 평균 점수를 부여한다.
+- 각 벡터별로 평가한 점수의 평균
 
 ![image](https://github.com/hhzzzk/studyLog/assets/67236054/7f6fdadd-5cd3-430e-a78f-01ace5c973c4)
 
@@ -162,6 +163,7 @@ CCS = Pearson Correlation Coefficient, 가장 대표적인 상관계수
 
 - *모든 평점이 긍정적이라서!!!!!*
   - sol ) 모든 평점을 평균 점수만큼 빼주기
+  - 각 벡터의 평균을 각 벡터의 평점마다 빼 준다.
 
 ![image](https://github.com/hhzzzk/studyLog/assets/67236054/3fc54326-b6f7-4f04-9b0f-469b12c1aece)
 
