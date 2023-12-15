@@ -1,5 +1,9 @@
 # SS_8_1_websecurity
 
+[TOC]
+
+
+
 쿠키전까지 todo
 
 start
@@ -33,7 +37,7 @@ start
 
 ## Cookie : 예제
 
-쿠키는 (name, domain, path)로 식별된다.
+**쿠키는 (name, domain, path)로 식별된다.**
 
 쿠키는 브라우저의 "cookie.jar"에 저장된다.
 
@@ -67,7 +71,7 @@ cs142hw.site.com은 자신이 "badguy"와 통신하고 있다고 착각합니다
 
 
 
-## Cookie : Countermeasure 대책
+## Cookie : Countermeasure 대책 : integrity!!!
 
 안전한 쿠키를 만들쟈
 
@@ -91,7 +95,7 @@ cs142hw.site.com은 자신이 "badguy"와 통신하고 있다고 착각합니다
 
 
 
-## Session Management
+## Session Management - SID
 
 세션 관리는 웹 개발자가 stateless인 http 프로토콜에서 session state를 지원하기 위해 사용하는 기술이다.
 
@@ -131,6 +135,8 @@ Referer 헤더를 통한 토큰 누출
 
 ## Session hijacking
 
+http 레벨에서의 하이재킹!!!!!!!!!!!!!!!!!!!!
+
 - 세션 하이재킹은 공격자가 사용자의 로그인을 기다린 후, 사용자의 세션 토큰을 획득하고 세션을 "하이재킹"하는 공격이다.
 - Predictable tokens, cookie theft, sessionfixation attacks가 있다.
 
@@ -169,7 +175,7 @@ Referer 헤더를 통한 토큰 누출
 
    - 사용자가 로그인하면 토큰이 공격자에게 알려지지 않는 새로운 값으로 변경된다. 이로써 공격자의 토큰은 업그레이드되지 않는다.
 
-2. 강력한 세션 토큰
+2. **강력한 세션 토큰**
 
    ![image](https://github.com/hhzzzk/studyLog/assets/67236054/15177ae3-2b53-40b5-b579-20a083527878)
 
@@ -178,7 +184,7 @@ Referer 헤더를 통한 토큰 누출
    - 세션토큰은 SID를 HMAC 함수를 사용해 K키로 서명한 것이다. 이를 통해 토큰의 무결성이 보장된다.
 
 
-   - K는 웹서버에서 생성한 비밀키이다. 더 강력한 SID, 세션 아이디를 위해 여러 데이터를 SID에 포함한다. 클클라이언트의 ip주소 등...
+   - K는 웹서버에서 생성한 비밀키이다. 더 강력한 SID, 세션 아이디를 위해 여러 데이터를 SID에 포함한다. 클라이언트의 ip주소 등...
 
 
 
@@ -232,7 +238,7 @@ CWE-79 Improper Neutralization of Input During Web Page Generation : 웹페이�
 
 ## Non-persistent XSS (reflected XSS)
 
-사용자의 입력이 즉시 서버에 저장되지 않고 해당 입력이 웹페이지 반사되어 실행되는 상황이다.
+사용자의 입력이 즉시 서버에 저장되지 않고 해당 입력이 웹페이지 반사!!사실은 다른 링크로 연결되는=되어 실행되는 상황이다.
 
 예시로 검색 엔진이나 입력폼 등이 있다.
 

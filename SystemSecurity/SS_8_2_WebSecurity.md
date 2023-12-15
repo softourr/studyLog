@@ -1,16 +1,22 @@
 # SS_8_2_WebSecurity
 
+[TOC]
+
+
+
 이부분 다시보기...졸앗음...
 
 ## CSRF - Cross-Site Request Forgery
 
 원클릭 공격 또는 세션 라이딩이라고도 한다.
 
-**CWE-352 Cross-Site Request Forgery (CSRF):** 불법 명령이 웹사이트가 신뢰하는 사용자로부터 전송되는 악의적인 공격 유형
+**CWE-352 Cross-Site Request Forgery (CSRF):** 불법 명령이 웹사이트가 신뢰하는 **사용자**로부터 전송되는 악의적인 공격 유형
 
-- XSS는 사용자의 특정 사이트에 대한 신뢰를 악용한다.
-- CSRF는 웹사이트의 사용자 브라우저에 대한 신뢰를 악용한다.
+- **XSS는 사용자의 특정 사이트에 대한 신뢰를 악용한다.**
+- **CSRF는 웹사이트의 사용자 브라우저에 대한 신뢰를 악용한다.**
 
+
+!!  웹사이트에 악의적인 스크립트를 숨겨놓는
 
 
 예시1
@@ -62,6 +68,8 @@
 개중요제일중요
 
 **CWE-89 : 데이터를 SQL 쿼리로 적절하게 세탁하지 않는 오류**
+
+Failure to Sanitize Data into SQL Querie
 
 주로 데이터베이스에서 발생
 
@@ -125,7 +133,7 @@ $sql = "select * from users where id = ' ′  ;  DROP TABLE  members  -- and pas
 1. 사용자 입력을 신뢰하지 않는다.
 2. 특별한 char, 특수문자를 입력하지 못하게 한다.
 3. 에러메시지를 노출하지 않는다.
-4. db 게정의 권한을 낮춘다.
+4. db 계정의 권한을 낮춘다.
 
 sql인젝션 매우 중요!!!!
 
@@ -194,3 +202,4 @@ http://adm.site.com
 1. 알려진 SW : nmap, hping3, nessus, paros
 2. 서비스 중지를 방지하기 위해 사용된다.
 3. 일부 도구는 실제 공격을 수행하기도 한다.
+
