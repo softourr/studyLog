@@ -2,6 +2,8 @@
 
 최은미 교수님
 
+✅ [PROJECT LINK](https://github.com/hhzzzk/delicious-calories) 
+
 <img src="https://github.com/hhzzzk/studyLog/assets/67236054/75e50f29-54ff-4e54-99db-ccb09b6bb2cf" width="300" height="400"/>
 
 [Software Architecture in Practice](https://product.kyobobook.co.kr/detail/S000007684891)
