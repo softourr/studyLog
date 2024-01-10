@@ -1,0 +1,219 @@
+
+insertBT(T, m, newKey)
+  if (T = NULL) then
+    T <- getBTNode(m);
+    T.K[0] <- newKey;
+    T.n <- 1;
+
+    return;
+
+  found, stack <- searchPath(T, m, newKey, NULL);
+  if (found) then return;
+
+  finished <- false;
+
+  x <- pop from stack;
+  y <- NULL;
+
+  do
+    if (x.n < m - 1) then
+      insertKey(T, m, x, y, newKey);
+      finished <- true;
+    else then
+      newKey, newNode <- splitNode(T, m, x, y, newKey);
+      y <- newNode;
+      if (stack is not empty) then
+        x <- pop from stack;
+      else then
+        T <- getBTNode(m);
+        T.K[0] <- newKey;
+        T.P[0] <- x;
+        T.P[1] <- y;
+        T.n <- 1;
+        finished = true;
+  while (!finished);
+end insertBT
+//
+searchPath(T, m, key, stack)
+  if (stack = NULL) then stack <- empty stack;
+  x <- T; i <- 0;
+  do
+    i <- 0;
+    while (i < x.n && key > x.K[i]) do
+      i++;
+
+    push x on stack;
+
+    if (i < x.n && key = x.K[i]) then
+      return (true, stack);
+  while ((x <- x.P[i]) != NULL);
+
+  return (false, stack);
+end searchPath
+
+
+insertKey(T, m, x, y, newKey)
+  i <- x.n - 1;
+  while (i >= 0 && newKey < x.K[i]) do
+    x.K[i + 1] <- x.K[i];
+    x.P[i + 2] <- x.P[i + 1];
+    i--;
+  x.K[i + 1] <- newKey;
+  x.P[i + 2] <- y;
+  x.n++;
+end insertKey
+
+/
+splitNode(T, m, x, y, newKey)
+  tempNode <- getBTNode(m + 1);
+	copy x to tempNode;
+  insertKey(T, m, tempNode, y, newKey);
+
+  centerKey <- tempNode.K[tempNode.n / 2];
+
+  x.n <- 0;
+  i <- 0;
+  while (tempNode.K[i] < centerKey) do
+    x.K[i] <- tempNode.K[i];
+    x.P[i] <- tempNode.P[i];
+    i++;
+    x.n++;
+  x.P[i] <- tempNode.P[i];
+
+  newNode <- getBTNode(m);
+  i++;
+  while (i < tempNode.n) do
+    newNode.K[newNode.n] <- tempNode.K[i];
+    newNode.P[newNode.n] <- tempNode.P[i];
+    i++;
+    newNode.n++;
+  newNode.P[newNode.n] <- tempNode.P[i];
+
+  delete tempNode;
+
+  return (centerKey, newNode);
+end splitNode
+
+//
+deleteKey(T, m, x, oldKey)
+  i <- 0;
+  while (oldKey > x.K[i]) do
+    i++;
+
+  while (i < x.n) do
+    x.K[i] <- x.K[i + 1];
+    x.P[i + 1] <- x.P[i + 2];
+    i++;
+  x.n--;
+end deleteKey
+
+
+bestSibling(T, m, x, y)
+  i <- 0;
+  while (y.P[i] != x) do
+    i++;
+
+  if (i = 0) then
+    return i + 1;
+  else if (i = y.n) then
+    return i - 1;
+  else if (y.P[i].n >= y.P[i + 1].n) then
+    return i - 1;
+  return i + 1;
+end bestSibling
+
+
+redistributeKeys(T, m, x, y, bestSib)
+  i <- 0;
+  while (y.P[i] != x) do
+    i++;
+
+  bestNode <- y.P[bestSib];
+  if (bestSib < i) then
+    lastKey <- bestNode.K[bestNode.n - 1];
+    insertKey(T, m, x, NULL, y.K[i - 1]);
+    x.P[1] <- x.P[0];
+    x.P[0] <- bestNode.P[bestNode.n];
+    bestNode.P[bestNode.n] <- NULL;
+    deleteKey(T, m, bestNode, lastKey);
+    y.K[i - 1] <- lastKey;
+  else then
+    firstKey <- bestNode.K[0];
+    insertKey(T, m, x, NULL, y.K[i]);
+    x.P[x.n] <- bestNode.P[0];
+    bestNode.P[0] <- bestNode.P[1];
+    deleteKey(T, m, bestNode, firstKey);
+    y.K[i] <- firstKey;
+end redistributeKeys
+
+
+mergeNode(T, m, x, y, bestSib)
+  i <- 0;
+  while (y.P[i] != x) do
+    i++;
+
+  bestNode <- y.P[bestSib];
+  if (bestSib > i) then
+    tmp <- i; i <- bestSib; bestSib <- tmp;
+    tmpnode <- x; x <- bestNode; bestNode <- tmpnode;
+  bestNode.K[bestNode.n] <- y.K[i - 1];
+  bestNode.n++;
+  j <- 0;
+  while (j < x.n) do
+    bestNode.K[bestNode.n] <- x.K[j];
+    bestNode.P[bestNode.n] <- x.P[j];
+    bestNode.n++;
+    j++;
+  bestNode.P[bestNode.n] <- x.P[x.n];
+  deleteKey(T, m, y, y.K[i - 1]);
+  delete x;
+end mergeNode
+
+//////////////////////////
+deleteBT(T, m, oldKey)
+  found, stack <- searchPath(T, m, oldKey, NULL);
+  if (found = false) then return;
+
+  x <- pop from stack;
+	y <- NULL;
+
+  if (oldKey is not in terminal node) then
+    internalNode <- x;
+		i <- index of oldKey in internalNode;
+
+		push x on stack;
+    searchPath(x.P[i + 1], m, x.K[i], stack);
+
+    x = pop from stack;
+    temp <- internalNode.K[i];
+    internalNode.K[i] <- x.K[0];
+    x.K[0] <- temp;
+
+  finished <- false;
+  deleteKey(T, m, x, oldKey);
+~~~
+  if (stack is not empty) then
+    y <- pop from stack;
+
+  do
+    if (T == x || x.n >= (m - 1) / 2) then
+      finished <- true;
+    else then
+      bestSib <- bestSibling(T, m, x, y);
+
+      if (y.P[bestSib].n > (m - 1) / 2) then
+        redistributeKeys(T, m, x, y, bestSib);
+        finished <- true;
+      else then
+        mergeNode(T, m, x, y, bestSib);
+        x <- y;
+        if (stack is not empty) then
+          y <- pop from stack;
+        else
+          finished <- true;
+  while (!finished);
+
+  if (y != NULL && y.n = 0)
+    T <- y.P[0];
+    delete y;
+end deleteBT
