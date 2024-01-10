@@ -18,6 +18,10 @@
 
 [`데이터과학`](https://github.com/hhzzzk/studyLog/tree/main/DataScience)
 
+[`운영체제`](https://github.com/hhzzzk/studyLog/tree/main/OperatingSystem)
+
+[`컴퓨터그래픽스`](https://github.com/hhzzzk/studyLog/tree/main/ComputerGrapics)
+
 # Book&Lec
 
 # CodingTest
